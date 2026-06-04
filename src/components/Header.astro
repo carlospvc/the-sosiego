@@ -1,0 +1,49 @@
+---
+// Sticky header — wordmark + page-aware nav. Exactly three entries:
+//   Work · Who's behind it · Say hello.
+// Below 820px the inline nav collapses into a hamburger + full-screen overlay.
+interface Props {
+  page: 'home' | 'who';
+}
+
+const { page } = Astro.props;
+const onHome = page === 'home';
+
+const homeHref = onHome ? '#top' : '/';
+const workHref = onHome ? '#making' : '/#making';
+const whoHref = onHome ? '/who-behind-it' : '#top';
+const helloHref = onHome ? '#hello' : '/#hello';
+---
+
+<header class="hdr over" data-page={page}>
+  <a href={homeHref} aria-label="The Sosiego — home" data-nav="home">
+    <span class="wm">
+      <span class="the">The</span>Sosiego
+    </span>
+  </a>
+
+  <nav>
+    <a class={`lnk${onHome ? ' act' : ''}`} href={workHref} data-nav="work">Work</a>
+    <a class={`lnk${!onHome ? ' act' : ''}`} href={whoHref} data-nav="who">Who's behind it</a>
+    <a class="cta" href={helloHref} data-nav="hello">Say hello</a>
+  </nav>
+
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-label="Menu"
+    aria-controls="mobile-nav"
+    aria-expanded="false"
+  >
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <nav class="mobile-nav-list">
+      <a class="m-lnk" href={workHref} data-nav="work">Work</a>
+      <a class="m-lnk" href={whoHref} data-nav="who">Who's behind it</a>
+      <a class="m-cta" href={helloHref} data-nav="hello">Say hello</a>
+    </nav>
+  </div>
+</header>

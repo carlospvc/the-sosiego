@@ -1,0 +1,275 @@
+/* ============================================================================
+   THE SOSIEGO — Design Foundations
+   colors_and_type.css
+
+   "I make things that care for what matters."
+
+   A studio identity: white as the primary surface, imagery carries the warmth
+   and color, and a single vivid orange accent brings the joy. Type has
+   character — a heavy display (Tanker) plus an expressive grotesque (Clash
+   Display). Sober, confident, warm — never loud for its own sake.
+
+   Fonts load from Fontshare (Tanker + Clash Display). If self-hosting, drop the
+   files in fonts/ and swap the @import for @font-face.
+
+   SCOPE: this system is THE SOSIEGO (the studio) only. Products such as Circles
+   have their own, independent design systems and do NOT inherit from this one.
+   ============================================================================ */
+
+/* Fonts load from Fontshare via a <link> in <head> (Base.astro) for
+   performance — see the original @import note above. */
+
+:root {
+  /* ------------------------------------------------------------------ *
+   * 1. TYPEFACES
+   *    Two voices with distinct personalities that complement, not compete.
+   * ------------------------------------------------------------------ */
+  --font-display: 'Tanker', 'Arial Black', system-ui, sans-serif; /* wordmark, headlines, big numbers, section titles — used SPARINGLY & LARGE */
+  --font-text:    'Clash Display', system-ui, -apple-system, sans-serif; /* everything else: body, UI, lede, captions, nav, buttons */
+
+  /* ------------------------------------------------------------------ *
+   * 2. PALETTE
+   *    White leads. Imagery brings warmth/color. One vivid accent = joy.
+   * ------------------------------------------------------------------ */
+
+  /* Surfaces — essentially white, with a barely-warm alt and a soft panel */
+  --white:        #FFFFFF;   /* primary surface — the page */
+  --white-warm:   #FBFAF7;   /* optional barely-warm white */
+  --panel:        #F3F0EA;   /* quiet panel / inset (use rarely) */
+  --panel-2:      #ECE8E0;
+
+  /* Ink — warm near-black, never pure #000 */
+  --ink-900:      #1A1813;   /* primary text / headlines */
+  --ink-700:      #44403A;   /* strong secondary */
+  --ink-600:      #5F5A51;   /* secondary text */
+  --ink-400:      #9B9488;   /* faint text / captions */
+  --ink-200:      #C7C0B3;   /* disabled */
+
+  /* Hairlines */
+  --line:         #ECE8E0;   /* default hairline on white */
+  --line-strong:  #E0DBD0;   /* dividers / input outline */
+
+  /* Accent — vivid orange, the single brand color (the joy) */
+  --orange-500:   #F5611E;   /* PRIMARY ACCENT */
+  --orange-600:   #DC5316;   /* hover / pressed */
+  --orange-700:   #B8430F;   /* accent-as-text on white (AA) */
+  --orange-soft:  #FFEDE2;   /* tinted fill behind accent (pills, hovers) */
+  --on-accent:    #FFFFFF;   /* text/icons on the orange */
+
+  /* Warm photo placeholder gradient (for image slots before real photos) */
+  --photo-1:      #C4B196;
+  --photo-2:      #5E4A33;
+
+  /* Ink "night" section (footer / newsletter band) */
+  --ink-bg:       #1A1813;
+  --on-ink:       #FBFAF7;
+  --on-ink-soft:  #B8B1A4;
+  --line-on-ink:  #34302A;
+
+  /* ------------------------------------------------------------------ *
+   * 3. SEMANTIC ROLES  (use these in product, not raw palette)
+   * ------------------------------------------------------------------ */
+  --bg:            var(--white);
+  --bg-alt:        var(--white-warm);
+  --surface:       var(--white);
+  --surface-sunk:  var(--panel);
+
+  --fg:            var(--ink-900);
+  --fg-muted:      var(--ink-600);
+  --fg-faint:      var(--ink-400);
+  --fg-disabled:   var(--ink-200);
+
+  --border:        var(--line);
+  --border-strong: var(--line-strong);
+
+  --accent:        var(--orange-500);
+  --accent-hover:  var(--orange-600);
+  --accent-text:   var(--orange-700);   /* accent used as readable text */
+  --accent-soft:   var(--orange-soft);
+
+  --focus-ring:    color-mix(in oklch, var(--orange-500) 40%, transparent);
+
+  /* Minimal semantics — kept restrained; the brand whispers, accent leads.
+     (Products like Circles define their own; these are for the studio web.) */
+  --success:       #3F7A4E;
+  --danger:        #C0392B;
+
+  /* ------------------------------------------------------------------ *
+   * 4. SPACING  — 4px base, generous; whitespace is part of the design
+   * ------------------------------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;   /* section rhythm on the website */
+
+  /* ------------------------------------------------------------------ *
+   * 5. RADII  — small & crisp (image-led, gallery feel). Not bubbly.
+   * ------------------------------------------------------------------ */
+  --radius-xs:  3px;
+  --radius-sm:  4px;    /* images, small fills */
+  --radius-md:  8px;    /* inputs, small cards */
+  --radius-lg:  14px;   /* panels */
+  --radius-xl:  20px;   /* big bands (newsletter) */
+  --radius-pill: 999px; /* pills, buttons, tags */
+
+  /* ------------------------------------------------------------------ *
+   * 6. SHADOWS  — barely there; the white page stays flat & airy
+   * ------------------------------------------------------------------ */
+  --shadow-xs: 0 1px 2px rgba(26, 24, 19, 0.04);
+  --shadow-sm: 0 2px 8px -3px rgba(26, 24, 19, 0.08);
+  --shadow-md: 0 10px 30px -14px rgba(26, 24, 19, 0.16);
+  --shadow-lg: 0 24px 50px -24px rgba(26, 24, 19, 0.22);
+
+  /* ------------------------------------------------------------------ *
+   * 7. MOTION  — calm, confident ease-out. No bounce.
+   * ------------------------------------------------------------------ */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-base: 260ms;
+  --dur-slow: 460ms;
+
+  /* ------------------------------------------------------------------ *
+   * 8. TYPE SCALE  (16px root)
+   *    Display = Tanker (used big & rarely). Everything else = Clash.
+   * ------------------------------------------------------------------ */
+  --text-mega:    clamp(46px, 8vw, 108px); /* hero headline (Tanker) */
+  --text-display: clamp(40px, 5.5vw, 72px);/* big display (Tanker) */
+  --text-h1:      40px;   /* Tanker */
+  --text-h2:      30px;   /* Tanker */
+  --text-h3:      22px;   /* Clash 500/600 */
+  --text-h4:      18px;   /* Clash 600 */
+  --text-lede:    19px;   /* Clash 400 */
+  --text-body:    17px;   /* Clash 400 */
+  --text-small:   15px;
+  --text-caption: 13px;
+  --text-overline:11px;   /* Clash 600, tracked caps */
+
+  --lh-tight:  0.92;   /* Tanker mega */
+  --lh-snug:   1.04;   /* Tanker display */
+  --lh-head:   1.12;
+  --lh-body:   1.55;
+  --lh-relaxed:1.7;
+
+  --tracking-mega:  -0.025em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-caps:   0.18em;  /* overlines / small caps labels */
+}
+
+/* ============================================================================
+   SEMANTIC TYPOGRAPHY  — drop-in classes
+   Display uses Tanker (sparingly, large). Text uses Clash Display.
+   ============================================================================ */
+
+.t-mega {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-mega);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-mega);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-display);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg);
+  text-wrap: balance;
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-h1);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg);
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-h2);
+  line-height: var(--lh-head);
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.t-h3 {
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--text-h3);
+  line-height: var(--lh-head);
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.t-h4 {
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--text-h4);
+  line-height: 1.2;
+  color: var(--fg);
+}
+.t-lede {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--text-lede);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-muted);
+}
+.t-body {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+}
+.t-small {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--text-small);
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+}
+.t-caption {
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--text-caption);
+  line-height: 1.4;
+  color: var(--fg-faint);
+}
+.t-overline {
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--text-overline);
+  line-height: 1;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+/* The wordmark lockup: "The Sosiego" in Tanker, the small "The" raised */
+.t-wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--fg);
+}
+.t-wordmark .the {
+  font-size: 0.5em;
+  opacity: 0.5;
+  margin-right: 0.35em;
+  vertical-align: 0.12em;
+}
+
+/* Accent helpers */
+.u-accent { color: var(--accent); }
+.u-accent-text { color: var(--accent-text); }

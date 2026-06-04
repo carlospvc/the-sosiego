@@ -1,0 +1,36 @@
+/* The Sosiego — "Who's behind it" page-specific layout.
+   The desk video is a full-bleed hero; the fixed header sits over its top and
+   turns solid on scroll (like home). A soft top scrim keeps the light header
+   type legible over the bright video. */
+
+/* This is a content page (content at the top of the fold), so the soft .reveal
+   fade — tuned for scrolling INTO view on home — should not hide the founder
+   story label/portrait on first paint. The word-by-word reveal stays. */
+.who-main .reveal { opacity: 1; transform: none; }
+
+.who-hero { position: relative; margin: 0; width: 100%; }
+.who-hero img,
+.who-hero video {
+  width: 100%;
+  height: clamp(360px, 62vh, 680px);
+  object-fit: cover;
+  object-position: 50% 56%;
+  display: block;
+}
+.who-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 168px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 17, 13, 0.48) 0%,
+    rgba(20, 17, 13, 0.18) 56%,
+    rgba(20, 17, 13, 0) 100%
+  );
+}
+.who-main { padding-top: clamp(40px, 7vh, 92px); }
+.who-main .studio { padding-top: clamp(4px, 1.5vh, 20px); }

@@ -1,0 +1,39 @@
+---
+import '../styles/colors_and_type.css';
+import '../styles/site.css';
+import '../styles/sections.css';
+import '../styles/studio.css';
+import '../styles/contact.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  page: 'home' | 'who';
+}
+
+const {
+  title,
+  description = 'The Sosiego — a small, calm studio making beautiful things that serve a purpose.',
+  page,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-page={page}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=tanker@400&f[]=clash-display@300,400,500,600,700&display=swap"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

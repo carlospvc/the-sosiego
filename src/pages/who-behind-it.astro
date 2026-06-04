@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import WhoHero from '../components/WhoHero.astro';
+import Studio from '../components/Studio.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/who.css';
+---
+
+<Base title="Who's behind it — The Sosiego" page="who">
+  <Header page="who" />
+  <WhoHero />
+  <main class="who-main">
+    <Studio />
+  </main>
+  <Footer />
+
+  <script>
+    import { initHeader } from '../scripts/header';
+    import { initReveal } from '../scripts/reveal';
+    import { initStudioWords } from '../scripts/studioWords';
+    import { initVideo } from '../scripts/video';
+
+    initVideo();
+    initHeader();
+    initReveal();
+    initStudioWords();
+  </script>
+</Base>

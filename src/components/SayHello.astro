@@ -1,0 +1,36 @@
+---
+// Say hello — id #hello. Version A only: minimal contact form over the dusk
+// courtyard banner. Front-end only submit (handled in contact script).
+---
+
+<section class="say say-over" id="hello" data-screen-label="Say hello">
+  <div class="wrap">
+    <div class="say-banner">
+      <img
+        src="/assets/courtyard.jpg"
+        alt="A stone courtyard at dusk, a lit window and a lantern glowing"
+      />
+      <div class="say-scrim" aria-hidden="true"></div>
+      <div class="say-over-inner">
+        <h2 class="say-h">Say hello<span class="dot">.</span></h2>
+        <div class="say-form-wrap">
+          <form class="say-form" novalidate>
+            <input
+              type="email"
+              required
+              placeholder="you@example.com"
+              aria-label="Your email"
+              name="email"
+            />
+            <textarea
+              rows="3"
+              placeholder="A few words…"
+              aria-label="Your message"
+              name="message"></textarea>
+            <button class="btn solid say-send" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+// Who's behind it (Studio): founder story + portrait + namesake definition,
+// then six principles. Copy verbatim & approved. Each readable word is wrapped
+// in <span class="word"> at build time so the scroll-linked reveal can fade it.
+
+function words(text: string): string {
+  return text
+    .split(/(\s+)/)
+    .map((tok) => (/^\s+$/.test(tok) ? tok : `<span class="word">${tok}</span>`))
+    .join('');
+}
+
+const para1 =
+  "I spent 16 years living a busy life as the CEO of a tech company. After selling it, I stopped to breathe. I went back to playing, experimenting, learning, going wherever curiosity took me. And I found myself drawn to making beautiful things that serve a purpose. A system to run a small business. Something for coaches who don't want to treat people as transactions. An app to stay close to the ones I love.";
+
+const para2 =
+  "It never crossed my mind to build a studio. But one day I paid attention and saw that everything shared the same intention. So I named it. The Sosiego is where that work lives now.";
+
+const defTail = 'the calm that arrives when nothing is pulling at you.';
+
+const principles = [
+  'I believe in beauty as a guiding principle.',
+  'I only work on projects I believe in.',
+  "I don't mind being wrong, it's part of the process.",
+  "I'm in no hurry, I find the path slowly.",
+  'I want my work to help you be more present.',
+  'I build tools that connect you, to yourself and to others.',
+];
+---
+
+<section class="studio" id="studio" data-screen-label="Studio">
+  <div class="wrap">
+    <!-- Part 1 — the story -->
+    <p class="studio-label reveal">Who's behind it</p>
+
+    <div class="studio-story">
+      <figure class="story-photo reveal">
+        <img
+          src="/assets/founder.jpg"
+          alt="The studio's founder, standing in a green river valley below a waterfall"
+        />
+      </figure>
+
+      <div class="story-prose">
+        <p set:html={words(para1)} />
+        <p set:html={words(para2)} />
+        <p class="story-def">
+          <span class="word def-word">Sosiego</span><span class="word def-pos"
+          >&nbsp;(n.)</span><span class="word def-dash">&nbsp;—&nbsp;</span><Fragment
+            set:html={words(defTail)}
+          />
+        </p>
+      </div>
+    </div>
+
+    <!-- Part 2 — the principles -->
+    <div class="principles" id="believe" data-screen-label="What I believe">
+      <p class="studio-label reveal">What I believe</p>
+      <ol class="prin-list">
+        {
+          principles.map((p, i) => (
+            <li class="prin">
+              <span class="prin-no">{String(i + 1).padStart(2, '0')}</span>
+              <span class="prin-txt" set:html={words(p)} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# design handoff source (kept locally, not deployed)
+reference/
+
+# logs
+npm-debug.log*
+*.log
+
+# macOS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# env
+.env
+.env.production

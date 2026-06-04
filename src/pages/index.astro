@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Work from '../components/Work.astro';
+import SayHello from '../components/SayHello.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="The Sosiego — a studio that cares for what matters" page="home">
+  <Header page="home" />
+  <main>
+    <Hero />
+    <Work />
+    <SayHello />
+  </main>
+  <Footer />
+
+  <script>
+    import { initHeader } from '../scripts/header';
+    import { initReveal } from '../scripts/reveal';
+    import { initHashScroll } from '../scripts/hashScroll';
+    import { initContact } from '../scripts/contact';
+    import { initVideo } from '../scripts/video';
+
+    initVideo();
+    initHeader();
+    initReveal();
+    initHashScroll();
+    initContact();
+  </script>
+</Base>
