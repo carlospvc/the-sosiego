@@ -1,0 +1,46 @@
+---
+// Isolated layout for the embedded Circles landing page. It loads ONLY the
+// Circles design system (circles-tokens.css + circles.css) plus the Tanker
+// face used by the studio return bar — so Circles' :root tokens never leak
+// into The Sosiego's global styles (each page bundles only what it imports).
+import '../styles/circles-tokens.css';
+import '../styles/circles.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Circles — stay close to what matters. A personal-relationship app, a project by The Sosiego.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="circles-page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <link rel="icon" href="/assets/circles/circles-mark.png" />
+
+    <!-- Circles type: Fraunces (serif), Geist Mono (labels), Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <!-- The Sosiego wordmark face (studio signature on the return bar) -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,156 @@
+---
+// Circles — a marketing landing for the Circles app, embedded inside The Sosiego.
+// Pure Circles design system in the body; the one studio element is the sticky
+// return bar at the top, which links back to the studio home.
+import CirclesBase from '../layouts/CirclesBase.astro';
+---
+
+<CirclesBase title="Circles · Stay close to what matters — a project by The Sosiego">
+  <!-- THE SOSIEGO RETURN BAR (sticky) -->
+  <div class="sos-bar" id="sosbar">
+    <a class="sos-home" href="/" aria-label="Back to The Sosiego studio home">
+      <span class="bk" aria-hidden="true">←</span>
+      <span class="sos-word"><span class="the">The</span>Sosiego</span>
+    </a>
+    <span class="sos-tag">Circles — <b>a Sosiego project</b></span>
+  </div>
+
+  <!-- HERO -->
+  <header id="top" class="hero grain">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <div class="dot-accent"></div>
+        <div class="eyebrow">An app for staying close</div>
+        <h1>Stay close<br />to what<br /><span class="echo">matters.</span></h1>
+        <p class="lede"><span class="em">No feed, no followers.</span> Just a gentle reminder to call the friends who fill your days.</p>
+        <div class="cta">
+          <button class="btn btn-ink">Get Circles for iPhone <span class="arrow">→</span></button>
+        </div>
+      </div>
+      <div class="hero-art reveal in">
+        <div class="frame">
+          <span class="tape"></span>
+          <img src="/assets/circles/three-circles.png" alt="Three circles of closeness, drawn by hand" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MADE SIMPLE (green) -->
+  <section class="panel-green pad-xl grain">
+    <div class="wrap simple-grid">
+      <div class="reveal">
+        <div class="eyebrow">Your circles</div>
+        <h2 class="lead-head" style="color:#fff">Made simple.<br /><span class="echo">Made human.</span></h2>
+        <div class="simple-points">
+          <div class="spoint">
+            <span class="ico" style="background:var(--ic)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"></path></svg></span>
+            <div><h4>A daily list of the people closest to you</h4><p>Open it once each morning. A short, ordered list, inner ring first.</p></div>
+          </div>
+          <div class="spoint">
+            <span class="ico" style="background:var(--cc)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+            <div><h4>A reason to reach out, and stay in touch</h4><p>One specific line worth sending, because you remembered the small thing.</p></div>
+          </div>
+          <div class="spoint">
+            <span class="ico" style="background:var(--ec)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+            <div><h4>Stronger connections, without the noise</h4><p>No metrics to chase. Just the steady record of small turns, kept up.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="simple-art"><img src="/assets/circles/board-circles.png" alt="Inner, close and external circles" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE CIRCLES -->
+  <section id="circles" class="pad-l grain">
+    <div class="wrap">
+      <div class="circles-head reveal">
+        <div class="eyebrow">Three circles of closeness</div>
+        <h2 class="lead-head">Not everyone belongs<br /><span class="echo">at the same distance.</span></h2>
+        <p>The people closest to you deserve to hear from you more often. Circles sorts your relationships into three rings, each with its own gentle rhythm, so the right names surface at the right time.</p>
+      </div>
+      <div class="crows">
+        <div class="crow reveal">
+          <span class="blob" style="background:var(--ic-soft)"></span>
+          <h3>Inner <span class="echo">circle.</span></h3>
+          <p class="desc">Partner, parent, closest friend. The handful you'd call first and never want to drift from.</p>
+        </div>
+        <div class="crow reveal">
+          <span class="blob" style="background:var(--cc-soft)"></span>
+          <h3>Close <span class="echo">circle.</span></h3>
+          <p class="desc">The good friends just outside the inner ring, the ones you see and message often.</p>
+        </div>
+        <div class="crow reveal">
+          <span class="blob" style="background:var(--ec-soft)"></span>
+          <h3>External <span class="echo">circle.</span></h3>
+          <p class="desc">Old colleagues, distant friends, good acquaintances. People you want to keep the door open with.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMMERSIVE BREAK -->
+  <section class="break grain">
+    <div class="wrap break-grid">
+      <div class="reveal">
+        <div class="eyebrow" style="color:rgba(255,255,255,.5)">Presence, not pings</div>
+        <h2>Back to the people<br /><span class="echo">you love.</span></h2>
+        <p>Circles brings you back to the ones you love, so when you're with them, you're fully there. Fewer reasons to glance at a screen, more time looking up.</p>
+      </div>
+      <div class="reveal">
+        <div class="postcard">
+          <img src="/assets/circles/landscape.png" alt="Two people standing together, present with each other" />
+          <div class="cap">Circles · Be present</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SHOWCASE (green) -->
+  <section id="app" class="panel-green pad-xl grain">
+    <div class="wrap show-head reveal">
+      <div class="eyebrow">The app</div>
+      <h2>Less scroll. <span class="echo">More soul.</span></h2>
+      <p>A warm, paper-quiet interface that gets out of your way. Today's list, your three circles, and a two-week recap of how you've shown up. Nothing more.</p>
+    </div>
+    <div class="show-photo reveal">
+      <img src="/assets/circles/product-phones.png" alt="Circles app, Today, your circles, and a person's story" />
+    </div>
+    <div class="wrap show-cta reveal"><button class="btn btn-paper">Get Circles for iPhone <span class="arrow">→</span></button></div>
+  </section>
+
+  <!-- STORYBOARD -->
+  <section id="how" class="pad-xl grain">
+    <div class="wrap">
+      <div class="story-head reveal">
+        <div class="eyebrow">How it shows up</div>
+      </div>
+      <div class="story-single reveal">
+        <img src="/assets/circles/storyboard.png" alt="How Circles shows up, drawn by hand" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY (green) -->
+  <section id="idea" class="philo panel-green grain">
+    <div class="wrap">
+      <div class="q reveal">Relationships rarely end<br />with a falling out.<br /><span class="echo">They fade in the quiet<br />of not reaching out.</span></div>
+      <div class="by reveal">The idea behind Circles</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="grain">
+    <div class="wrap foot-base">
+      <span>© 2026 Circles · v1.0</span>
+      <a class="foot-studio" href="/">A project by The Sosiego ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    import { initCircles } from '../scripts/circles';
+    initCircles();
+  </script>
+</CirclesBase>
