@@ -25,6 +25,21 @@
 .sos-line.ans:last-child{color:var(--ink-900)}
 
 /* ============================================================ *
+   INTRO : a tight, low-key transition from hero into work.
+ * ============================================================ */
+.intro{background:var(--bg);padding:clamp(40px,7vh,84px) 0}
+.intro-statement{font-family:var(--font-text);font-weight:400;margin:0;max-width:38ch;
+  font-size:clamp(20px,2.1vw,28px);line-height:1.42;letter-spacing:-0.012em;
+  color:var(--ink-900);text-wrap:pretty}
+.intro-statement .dot{color:var(--accent)}
+/* keep the gap below the text equal to the one above it (Work adds none) */
+.intro + .making{padding-top:0}
+@media(max-width:760px){
+  .intro{padding:clamp(32px,6vh,56px) 0}
+  .intro-statement{max-width:none;font-size:clamp(20px,5.4vw,26px)}
+}
+
+/* ============================================================ *
    2 — WHAT I'M MAKING : studio case-study presentation
  * ============================================================ */
 .making{background:var(--bg);padding:clamp(48px,8vh,108px) 0 clamp(64px,11vh,150px)}
